@@ -7,6 +7,11 @@
   <meta name="description" content="Alugue uma casa incrível para eventos e temporada no Maranhão: piscina, área gourmet, quartos confortáveis e fácil acesso. Veja fotos, preços e entre em contato.">
   <link rel="canonical" href="https://example.com/">
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="preload" as="image" href="./assets/hero.webp" type="image/webp">
+
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://maps.googleapis.com">
+  <link rel="preconnect" href="https://maps.gstatic.com">
 </head>
 <body>
   <!-- Header -->
@@ -46,7 +51,12 @@
         </div>
       </div>
       <figure class="hero__media reveal">
-        <img src="./assets/hero.jpg.svg" alt="Vista panorâmica da casa de eventos com piscina.">
+        <img  src="./assets/hero.webp" 
+              alt="Vista panorâmica da casa de eventos com piscina."
+              width="1200" 
+              height="800" 
+              loading="eager" 
+              decoding="async">
       </figure>
     </section>
 
@@ -66,7 +76,7 @@
           </p>
         </div>
         <figure class="hero__media">
-          <img src="./assets/galeria-1.jpg.svg" alt="Foto da área externa da casa">
+          <img src="./assets/hero.webp" alt="Foto da área externa da casa" width="1200" height="800" >
         </figure>
       </div>
     </section>
@@ -95,11 +105,11 @@
     <section class="section container" id="galeria">
       <h2 class="reveal">Galeria</h2>
       <div class="gallery__grid">
-        <a href="./assets/galeria-1.jpg.svg" class="reveal"><img src="./assets/galeria-1.jpg.svg" alt="Área externa da piscina"></a>
-        <a href="./assets/galeria-2.jpg.svg" class="reveal"><img src="./assets/galeria-2.jpg.svg" alt="Área da churrasqueira"></a>
-        <a href="./assets/galeria-3.jpg.svg" class="reveal"><img src="./assets/galeria-3.jpg.svg" alt="Área da varanda"></a>
-        <a href="./assets/galeria-4.jpg.svg" class="reveal"><img src="./assets/galeria-4.jpg.svg" alt="Ambiente de quartos climatizados"></a>
-        <a href="./assets/galeria-5.jpg.svg" class="reveal"><img src="./assets/galeria-5.jpg.svg" alt="Área para lazer"></a>
+        <a href="./assets/galeria-1.jpg.svg" class="reveal"><img src="./assets/galeria-1.jpg.svg" alt="Área externa da piscina" width="1200" height="800" loading="lazy"></a>
+        <a href="./assets/galeria-2.jpg.svg" class="reveal"><img src="./assets/galeria-2.jpg.svg" alt="Área da churrasqueira" width="1200" height="800" loading="lazy"></a>
+        <a href="./assets/galeria-3.jpg.svg" class="reveal"><img src="./assets/galeria-3.jpg.svg" alt="Área da varanda" width="1200" height="800" loading="lazy"></a>
+        <a href="./assets/galeria-4.jpg.svg" class="reveal"><img src="./assets/galeria-4.jpg.svg" alt="Ambiente de quartos climatizados" width="1200" height="800" loading="lazy"></a>
+        <a href="./assets/galeria-5.jpg.svg" class="reveal"><img src="./assets/galeria-5.jpg.svg" alt="Área para lazer" width="1200" height="800" loading="lazy"></a>
       </div>
     </section>
 
@@ -201,7 +211,7 @@
   </footer>
 
   <!-- Lucide Icons  -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
   <script>
     lucide.createIcons();
   </script>
