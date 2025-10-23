@@ -1,6 +1,9 @@
 [build]
   publish = "."
 
+# ------------------------
+# Caching para assets estáticos
+# ------------------------
 [[headers]]
   for = "/*"
   [headers.values]
@@ -8,12 +11,36 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()" # Restringe recursos não usados
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload" # HSTS
 
+# ------------------------
+# Evita cache no HTML (atualizações imediatas)
+# ------------------------
 [[headers]]
   for = "/index.html"
   [headers.values]
     Cache-Control = "no-cache"
 
+# ------------------------
+# Cache específico para service workers (se você adicionar futuramente)
+# ------------------------
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+# ------------------------
+# Cache mais curto para manifest e dados críticos (se você tiver manifest.json futuramente)
+# ------------------------
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# ------------------------
+# SPA fallback para index.html
+# ------------------------
 [[redirects]]
   from = "/*"
   to = "/index.html"
